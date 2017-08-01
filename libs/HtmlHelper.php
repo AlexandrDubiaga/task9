@@ -28,7 +28,7 @@ abstract class HtmlHelper{
 		}
 	}
 	
-	public static function select($select, $class = null,$size,$formControl) {
+	public static function select($select, $class = null,$size, $formControl, $selected) {
 		if (is_array($select)) {
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 			$formControl = (isset($formControl) && !empty($formControl)) ? ' class="' . $formControl . '"': null;
@@ -37,6 +37,10 @@ abstract class HtmlHelper{
 			$i = 0;
 			$string .= "<select multiple  $formControl $class $size>";
 			foreach ($select as $key => $val) {
+				if($selected == $val)
+				{
+					$val = 'selected';
+				}
 				$i++;
 				$string  .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;	
 			}
