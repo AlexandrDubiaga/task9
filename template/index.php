@@ -14,7 +14,11 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   </head>
   <body>
-    <h1>Hello world</h1>
+    <?php
+      echo $form;
+    
+    
+    ?>
 
    
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
