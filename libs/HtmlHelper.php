@@ -29,7 +29,7 @@ abstract class HtmlHelper{
 		}
 	}
 	
-	private static function list_item($items, $class = null) {
+	public static function list_item($items, $class = null) {
 		if (is_array($items)) {
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 			$li = '';
