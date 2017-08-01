@@ -48,9 +48,11 @@ abstract class HtmlHelper{
 			return $string;
 		}
 	}
-	public static function table(array $names, array $trOptions = null, array $thOptions = null)
+	table
+	public static function table(array $names, array $trOptions = null, array $thOptions = null,$class)
 	{	
-		$string .= '<table>';
+		$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
+		$string .= '<table $class>';
 		$string .= '<tr>';
 		foreach($names as $key => $val)
 		{
