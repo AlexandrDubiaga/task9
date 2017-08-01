@@ -28,12 +28,12 @@ abstract class HtmlHelper{
 		}
 	}
 	
-	public static function select($select, $class = null,$size) {
+	public static function select($select, $class = null,$size,$formControl) {
 		if (is_array($select)) {
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 			$string = '';
 			$i = 0;
-			$string .= "<select multiple class="form-control" $class size:$size>";
+			$string .= "<select multiple $formControl $class size:$size>";
 			foreach ($select as $key => $val) {
 				$i++;
 				$string  .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;	
