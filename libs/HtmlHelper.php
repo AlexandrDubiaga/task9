@@ -32,13 +32,15 @@ abstract class HtmlHelper{
 	public static function list_item($items, $class = null) {
 		if (is_array($items)) {
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
-			$li = '';
+			$option = '';
 			$i = 0;
+			echo "<select>";
 			foreach ($items as $key => $val) {
 				$i++;
-				$li .= '<li id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</li>' . PHP_EOL;
+				$option .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;
 			}
-			return $li;
+			echo "</select>";
+			return $option;
 		}
 	}
 	
