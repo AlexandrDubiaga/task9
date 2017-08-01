@@ -28,8 +28,10 @@ abstract class HtmlHelper{
 		}
 	}
 	
-	public static function select($select, $class = null,$size, $formControl, $selected) {
-		if (is_array($select)) {
+	public static function select($select, $class = null,$size, $formControl, $selected) 
+	{
+		if (is_array($select)) 
+		{
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 			$formControl = (isset($formControl) && !empty($formControl)) ? ' class="' . $formControl . '"': null;
 			$size = (isset($size) && !empty($size)) ? ' size="' . $size . '"': null;
@@ -37,13 +39,28 @@ abstract class HtmlHelper{
 			$sel = 'selected';
 			$i = 0;
 			$string .= "<select multiple  $formControl $class $size>";
-			foreach ($select as $key => $val) {
+			foreach ($select as $key => $val)
+			{
 				$i++;
 				$string  .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;	
 			}
 			$string  .= "</select>";
 			return $string;
 		}
+	}
+	public static function table(array $names, array $trOptions = null, array $thOptions = null)
+	{	
+		$string .= '<table>';
+		$string .= '<tr>';
+		foreach($names as $key => $val)
+		{
+			$string .= '<td>'. PHP_EOL . $val . PHP_EOL .'</td>'
+		
+		}
+		$string .= '</tr>';
+		$string .= '</table>';
+		return $string;
+	
 	}
 	
 	
