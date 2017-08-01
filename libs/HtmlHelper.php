@@ -34,12 +34,14 @@ abstract class HtmlHelper{
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 			$option = '';
 			$i = 0;
-			echo "<select>";
+			
 			foreach ($items as $key => $val) {
+				echo "<select>";
 				$i++;
 				$option .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;
+				echo "</select>";
 			}
-			echo "</select>";
+			
 			return $option;
 		}
 	}
