@@ -17,6 +17,7 @@
     <?php
     
     echo $selectMult;
+    echo "<br>";
     echo $table;
       ?>
    
