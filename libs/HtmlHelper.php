@@ -34,12 +34,13 @@ abstract class HtmlHelper{
 			$formControl = (isset($formControl) && !empty($formControl)) ? ' class="' . $formControl . '"': null;
 			$size = (isset($size) && !empty($size)) ? ' size="' . $size . '"': null;
 			$string = '';
+			$option = "<option>";
 			$i = 0;
 			$string .= "<select multiple  $formControl $class $size>";
 			foreach ($select as $key => $val) {
 				if($selected == $val)
 				{
-					$val = 'selected';
+					$option = 'selected';
 				}
 				$i++;
 				$string  .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;	
