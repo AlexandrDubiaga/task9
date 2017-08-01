@@ -15,9 +15,7 @@
   </head>
   <body>
     <?php
-      echo $form;
-    
-    
+     echo $selectMult;
     ?>
 
    
