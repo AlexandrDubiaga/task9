@@ -6,8 +6,8 @@ $fields = array(
 			   );
 
 $form =  HtmlHelper::Form('template/index.php', $fields);
-$select = array('option' => 'value', 'id' => 'alex', 'name' => 'test');
+$select = array('option' => 'first', 'id' => 'second', 'name' => 'third');
 
-echo $list = HtmlHelper::select($select,'liClass');
+echo $list = HtmlHelper::select($select,'liClass',20);
 include_once('template/index.php');
 ?>
