@@ -9,6 +9,6 @@ $form =  HtmlHelper::Form('template/index.php', $fields);
 */
 $select = array('option' => 'first', 'id' => 'second', 'name' => 'third');
 
-$selectMult = HtmlHelper::select($select,'liClass',1,'form-control');
+$selectMult = HtmlHelper::select($select,'liClass',1,'form-control','third');
 include_once('template/index.php');
 ?>
