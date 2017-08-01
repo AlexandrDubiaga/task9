@@ -18,6 +18,17 @@ abstract class HtmlHelper{
 		}
 	}
 	
+	private static function parse_fields($fields) {
+		if (is_array($fields)) {
+			$field = '';
+			foreach ($fields as $key => $val) {
+				$attributes = self::parse_attr($val);
+				$field .= '<input type="' . $key .'"' . $attributes . ' />' . PHP_EOL;
+			}
+			return $field;
+		}
+	}
+	
 	private static function list_item($items, $class = null) {
 		if (is_array($items)) {
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
