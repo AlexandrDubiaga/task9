@@ -6,5 +6,5 @@ $fields = array(
 				'password' => array('id' => 'password', 'name' => 'password', 'placeholder' => 'I\'m a password input!')
 			   );
 echo HtmlHelper::Form('index.php', $fields);
-
+include('template/index.php');
 ?>
