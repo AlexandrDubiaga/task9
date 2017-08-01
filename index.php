@@ -11,6 +11,6 @@ $select = array('first','second','third','fourth','fifth','six');
 
 $selectMult = HtmlHelper::select($select,'liClass',1,'form-control','third');
 $tab = array('Date', 'Title', 'Active');
-echo $table = HtmlHelper::table($tab, 'table');
+$table = HtmlHelper::table($tab, 'table table-striped');
 include_once('template/index.php');
 ?>
