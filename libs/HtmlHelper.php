@@ -42,7 +42,7 @@ abstract class HtmlHelper{
 					$key = 'selected';
 				}
 				$i++;
-				$string  .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;	
+				$string  .= '<option $key id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;	
 			}
 			$string  .= "</select>";
 			return $string;
