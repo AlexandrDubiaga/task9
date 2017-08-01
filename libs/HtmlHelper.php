@@ -3,7 +3,6 @@ abstract class HtmlHelper{
 	
 	private static $tag = '';
 	
-	const VERSION = '1.0.7';
 	
 	private static function parse_attr($attributes) {
 		if (is_string($attributes)) {
@@ -29,16 +28,15 @@ abstract class HtmlHelper{
 		}
 	}
 	
-	public static function list_item($items, $class = null) {
-		if (is_array($items)) {
+	public static function select($select, $class = null) {
+		if (is_array($select)) {
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 			$string = '';
 			$i = 0;
-			$string .= "<select>";
-			foreach ($items as $key => $val) {
+			$string .= "<select size:5px;>";
+			foreach ($select as $key => $val) {
 				$i++;
-				$string  .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;
-				
+				$string  .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;	
 			}
 			$string  .= "</select>";
 			
