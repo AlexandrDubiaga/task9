@@ -1,5 +1,5 @@
 <?php
-abstract class HTML {
+abstract class HtmlHelper{
 	
 	private static $tag = '';
 	
