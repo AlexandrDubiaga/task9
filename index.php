@@ -1,5 +1,5 @@
 <?php
-include_once(dirname(__FILE__) . '/class.html.php');
+include_once(lids/HtmlHelper.php');
 echo HTML::Doctype();
 $fields = array(
 				'text' => array('id' => 'username', 'name' => 'username', 'placeholder' => 'I\'m a text input!'),
