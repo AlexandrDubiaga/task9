@@ -49,7 +49,7 @@ abstract class HtmlHelper{
 		}
 	}
 	
-	public static function table(array $names, array $trOptions = null, array $thOptions = null,$class)
+	public static function table(array $names, $class)
 	{	
 		$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 		$string .= '<table $class>';
