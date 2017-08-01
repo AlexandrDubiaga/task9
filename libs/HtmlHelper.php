@@ -54,7 +54,7 @@ abstract class HtmlHelper{
 		$string .= '<tr>';
 		foreach($names as $key => $val)
 		{
-			$string .= '<td>'. PHP_EOL . $val . PHP_EOL .'</td>'
+			$string .= '<td>'. PHP_EOL . $val . PHP_EOL .'</td>' .  PHP_EOL;;
 		
 		}
 		$string .= '</tr>';
