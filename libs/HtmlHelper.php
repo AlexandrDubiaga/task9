@@ -33,8 +33,10 @@ abstract class HtmlHelper{
 		if (is_array($items)) {
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 			$option = '';
+			$sel = "<select>";
+			$sel2 = "</select>";
 			$i = 0;
-			echo "<select size:3px;>";
+			echo "<select>";
 			foreach ($items as $key => $val) {
 				$i++;
 				$option .= '<option id="' . $i . '"' . $class . '>' . PHP_EOL . $val . PHP_EOL . '</option>' . PHP_EOL;
@@ -42,7 +44,7 @@ abstract class HtmlHelper{
 			}
 			echo "</select>";
 			
-			return $option;
+			return $sel.$option.$sel2;
 		}
 	}
 	
