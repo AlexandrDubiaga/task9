@@ -132,10 +132,9 @@ abstract class HtmlHelper{
         foreach($list as $key => $val)
         {
 		if($key == 'varTwo')
-		{
-			checked="checked";
-		$valForInput = (isset($key) && !empty($key)) ? ' value="' . $key . '"': null;
-            	$string .= '<input type="checkbox" ' . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
+		{	
+			$valForInput = (isset($key) && !empty($key)) ? ' value="' . $key . '"': null;
+            		$string .= '<input type="checkbox" checked="checked"; ' . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
 		}	
         }
         $string .= "</form >";
