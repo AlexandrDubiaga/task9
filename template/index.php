@@ -16,6 +16,11 @@
   <body>
     <h3>select-multi</h3><br>
     <?php
+      echo $errorCheckboxForm;
+      echo $errorRadioForm;
+      echo $errorListDtDdDl;
+      echo $errorListOlUl;
+      echo $errorTable; 
       echo $errorSelect;
       echo $selectMult;
       echo "<br>";
