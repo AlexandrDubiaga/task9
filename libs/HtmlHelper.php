@@ -121,15 +121,21 @@ abstract class HtmlHelper{
         	return $string;
     	}
 	
-	public static function checkbox(array $list, $classForm, $classItem,$nameForInput)
+	public static function checkbox(array $list, $classForm, $classItem,$nameForInput,$checked)
 	{
 	$classForm = (isset($classForm) && !empty($classForm)) ? ' class="' . $classForm . '"': null;
         $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
+	$checked = (isset($checked) && !empty($checked)) ? ' checked="' . $checked . '"': null;
         $nameForInput = (isset($nameForInput) && !empty($nameForInput)) ? ' name="' . $nameForInput . '"': null;
         $string =' ';
         $string .= "<form $classForm>";
         foreach($list as $key => $val)
         {
+		if($key == 'varTwo')
+		{
+			$checked;
+		}
+			
         	$valForInput = (isset($key) && !empty($key)) ? ' value="' . $key . '"': null;
             	$string .= '<input type="checkbox" ' . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
         }
