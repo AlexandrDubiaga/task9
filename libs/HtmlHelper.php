@@ -52,6 +52,7 @@ abstract class HtmlHelper{
 			$string  .= "</select>";
 			return $string;
 		}
+		return false;
 	}
 	
 	public static function table(array $names, array $titles, $class)
