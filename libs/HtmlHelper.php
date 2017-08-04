@@ -33,9 +33,9 @@ abstract class HtmlHelper{
 		}
 	}
 	
-	public static function select(array $select, $class = null,$size, $formControl, $selected)
+	public static function select(array $select, $class = null,$size, $formControl)
 	{
-		if (!is_array($select))
+		if (!is_array($select) || empty($select))
 		{
 			return false;
 		}
@@ -45,7 +45,6 @@ abstract class HtmlHelper{
 			$formControl = (isset($formControl) && !empty($formControl)) ? ' class="' . $formControl . '"': null;
 			$size = (isset($size) && !empty($size)) ? ' size="' . $size . '"': null;
 			$string = '';
-			$sel = 'selected';
 			$i = 0;
 			$string .= "<select multiple  $formControl $class $size>";
 			foreach ($select as $key => $val)
@@ -61,6 +60,10 @@ abstract class HtmlHelper{
 	
 	public static function table(array $names, array $titles, $class)
 	{
+		if (!is_array($names) || empty($names))
+		{
+			return false;
+		}
         	$string='';
 		$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 		$string .= "<table $class>";
@@ -83,6 +86,10 @@ abstract class HtmlHelper{
 	}
 	public static function listesOlUl(array $list, $classList, $classItem, $tag = ' ')
 	{
+		if (!is_array($list) || empty($list))
+		{
+			return false;
+		}
         	$classList = (isset($classList) && !empty($classList)) ? ' class="' . $classList . '"': null;
         	$classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
         	$string =' ';
@@ -97,6 +104,10 @@ abstract class HtmlHelper{
 
     	public static function listesdlDtDd(array $list, $classList, $classItem)
 	{
+		if (!is_array($list) || empty($list))
+		{
+			return false;
+		}
     		$classList = (isset($classList) && !empty($classList)) ? ' class="' . $classList . '"': null;
         	$classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
         	$string =' ';
@@ -112,6 +123,10 @@ abstract class HtmlHelper{
 
     	public static function radiobuttonsGroup(array $list, $classForm, $classItem,$nameForInput)
 	{
+		if (!is_array($list) || empty($list))
+		{
+			return false;
+		}
 		$classForm = (isset($classForm) && !empty($classForm)) ? ' class="' . $classForm . '"': null;
         	$classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
         	$nameForInput = (isset($nameForInput) && !empty($nameForInput)) ? ' name="' . $nameForInput . '"': null;
@@ -128,6 +143,10 @@ abstract class HtmlHelper{
 	
 	public static function checkbox(array $list, $classForm, $classItem,$nameForInput,$checked)
 	{
+		if (!is_array($list) || empty($list))
+		{
+			return false;
+		}
 	$classForm = (isset($classForm) && !empty($classForm)) ? ' class="' . $classForm . '"': null;
         $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
         $nameForInput = (isset($nameForInput) && !empty($nameForInput)) ? ' name="' . $nameForInput . '"': null;
