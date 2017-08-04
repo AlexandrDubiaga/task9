@@ -31,7 +31,7 @@
     echo $radioForm;
     echo "<br>";
     echo "<br>";
-    echo $checkboxForm
+    echo $checkboxForm;
 
       ?>
    
