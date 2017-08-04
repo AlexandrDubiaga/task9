@@ -14,8 +14,11 @@ $listUl = HtmlHelper::listesOlUl($tab, 'list-group','list-group-item','ol');
 $val = array('varOne'=>'first', 'varTwo'=>'Second', 'varThree'=>'Fight');
 $dtdddlList = HtmlHelper::listesdlDtDd($val,'list-group','list-group-item');
 
-$valForm = array('varOne'=>'first', 'varTwo'=>'Second', 'varThree'=>'Fight');
-$radioForm = HtmlHelper::radiobuttonsGroup($valForm,'form-inline','','group');
+$valradio = array('varOne'=>'first', 'varTwo'=>'Second', 'varThree'=>'Fight');
+$radioForm = HtmlHelper::radiobuttonsGroup($valradio,'form-inline','','group');
+
+$valCheckbox = array('varOne'=>'first', 'varTwo'=>'Second', 'varThree'=>'Fight');
+$checkboxForm = HtmlHelper::checkbox($valForm,'form-inline','','val');
 
 
 
