@@ -35,6 +35,10 @@ abstract class HtmlHelper{
 	
 	public static function select(array $select, $class = null,$size, $formControl, $selected)
 	{
+		if (!is_array($select))
+		{
+			return false;
+		}
 		if (is_array($select)) 
 		{
 			$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
