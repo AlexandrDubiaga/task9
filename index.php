@@ -2,7 +2,12 @@
 include_once('libs/HtmlHelper.php');
 
 $select = array('first','second','third','fourth','fifth','six');
-$selectMult = HtmlHelper::select($select,'liClass',1,'form-control','third');
+$s = 'fd';
+$selectMult = HtmlHelper::select($s,'liClass',1,'form-control','third');
+if(!$selectMult)
+{
+  echo $errorSelect = ERROR_SELECT;
+}
 
 $titles = array('Name', 'Title', 'Date');
 $tab = array('Alex', 'Story', '12.02.17');
