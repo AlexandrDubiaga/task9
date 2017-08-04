@@ -4,7 +4,7 @@ include_once('libs/HtmlHelper.php');
 $select = array('first','second','third','fourth','fifth','six');
 $s = 'fd';
 $selectMult = HtmlHelper::select($s,'liClass',1,'form-control','third');
-if(!$selectMult)
+if($selectMult)
 {
   echo $errorSelect = ERROR_SELECT;
 }
