@@ -29,6 +29,9 @@
     echo "<br>";
     echo "<br>";
     echo $radioForm;
+    echo "<br>";
+    echo "<br>";
+    echo $checkboxForm
 
       ?>
    
