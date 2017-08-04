@@ -15,8 +15,8 @@
   </head>
   <body>
     <?php
-    
     echo $selectMult;
+    echo "<br>";
     echo "<br>";
     echo $table;
     echo "<br>";
@@ -25,7 +25,7 @@
     echo $listUl;
     echo "<br>";
     echo "<br>";
-    echo $dtdddlList;
+    echo $dtddlList;
     echo "<br>";
     echo "<br>";
     echo $radioForm;
