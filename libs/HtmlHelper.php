@@ -125,17 +125,15 @@ abstract class HtmlHelper{
 	{
 	$classForm = (isset($classForm) && !empty($classForm)) ? ' class="' . $classForm . '"': null;
         $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
-	$checked = (isset($checked) && !empty($checked)) ? ' checked="' . $checked . '"': null;
         $nameForInput = (isset($nameForInput) && !empty($nameForInput)) ? ' name="' . $nameForInput . '"': null;
         $string =' ';
         $string .= "<form $classForm>";
         foreach($list as $key => $val)
         {
-		if($key == 'varTwo')
-		{	
+			
 			$valForInput = (isset($key) && !empty($key)) ? ' value="' . $key . '"': null;
-            		$string .= '<input type="checkbox" checked="checked"; ' . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
-		}	
+            		$string .= '<input type="checkbox" ' .  (($cheked == 'varTwo') ? 'checked' : '') . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
+			
         }
         $string .= "</form >";
         return $string;
