@@ -14,29 +14,43 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   </head>
   <body>
+    <h3>select-multi</h3><br>
     <?php
-    echo $selectMult;
-    echo "<br>";
-    echo "<br>";
-    echo $table;
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo $listUl;
-    echo "<br>";
-    echo "<br>";
-    echo $dtddlList;
-    echo "<br>";
-    echo "<br>";
-    echo $radioForm;
-    echo "<br>";
-    echo "<br>";
-    echo $checkboxForm;
-
+      echo $selectMult;
+      echo "<br>";
+      echo "<br>";
+    ?>
+    <h3>table</h3><br>
+    <?php
+      echo $table;
+      echo "<br>";
+      echo "<br>";
+      echo "<br>";
+     ?>
+    <h3>ul-ol</h3><br>
+    <?php
+      echo $listUl;
+      echo "<br>";
+      echo "<br>";
+      ?>
+    <h3>dl-dt-dd</h3><br>
+    <?php
+      echo $dtddlList;
+      echo "<br>";
+      echo "<br>";
+    ?>
+    <h3>radiobuttons-group</h3><br>
+    <?php
+      echo $radioForm;
+      echo "<br>";
+      echo "<br>";
+     ?>
+    <h3>checkbox</h3><br>
+    <?php
+      echo $checkboxForm;
       ?>
    
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
   </body>
 </html>
