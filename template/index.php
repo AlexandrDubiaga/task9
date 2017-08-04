@@ -16,6 +16,7 @@
   <body>
     <h3>select-multi</h3><br>
     <?php
+    echo $errorSelect;
       echo $selectMult;
       echo "<br>";
       echo "<br>";
