@@ -29,7 +29,7 @@
      ?>
     <h3>ul-ol</h3><br>
     <?php
-      echo $listUl;
+      echo $listUlOl;
       echo "<br>";
       echo "<br>";
       ?>
