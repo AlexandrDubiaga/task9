@@ -2,25 +2,30 @@
 abstract class HtmlHelper{
 	
 	private static $tag = '';
-	
-	
-	private static function parse_attr($attributes) {
-		if (is_string($attributes)) {
+	private static function parse_attr($attributes)
+	{
+		if (is_string($attributes)) 
+		{
 			return (!empty($attributes)) ? ' ' . trim($attributes) : '';
 		}
-		if (is_array($attributes)) {
+		if (is_array($attributes)) 
+		{
 			$attr = '';
-			foreach ($attributes as $key => $val) {
+			foreach ($attributes as $key => $val) 
+			{
 				$attr .= ' ' . $key . '="' . $val . '"';
 			}
 			return $attr;
 		}
 	}
 	
-	private static function parse_fields($fields) {
-		if (is_array($fields)) {
+	private static function parse_fields($fields)
+	{
+		if (is_array($fields)) 
+		{
 			$field = '';
-			foreach ($fields as $key => $val) {
+			foreach ($fields as $key => $val)
+			{
 				$attributes = self::parse_attr($val);
 				$field .= '<input type="' . $key .'"' . $attributes . ' />' . PHP_EOL;
 			}
@@ -51,15 +56,15 @@ abstract class HtmlHelper{
 	
 	public static function table(array $names, array $titles, $class)
 	{
-        $string='';
+        	$string='';
 		$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 		$string .= "<table $class>";
-        $string .= '<tr>';
-        foreach($titles as $key => $val)
-        {
-            $string .= '<th>'. PHP_EOL . $val . PHP_EOL .'</th>' .  PHP_EOL;;
-        }
-        $string .= '</tr>';
+        	$string .= '<tr>';
+        	foreach($titles as $key => $val)
+        	{
+            		$string .= '<th>'. PHP_EOL . $val . PHP_EOL .'</th>' .  PHP_EOL;;
+        	}
+       		$string .= '</tr>';
 		$string .= '<tr>';
 		foreach($names as $key => $val)
 		{
@@ -71,69 +76,66 @@ abstract class HtmlHelper{
 		return $string;
 	
 	}
-	public static function listesOlUl(array $list, $classList, $classItem, $tag = ' '){
-        $classList = (isset($classList) && !empty($classList)) ? ' class="' . $classList . '"': null;
-        $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
-        $string =' ';
-        $string .= "<$tag $classList>";
-        foreach($list as $key => $val)
-        {
-            $string .= '<li ' . $classItem . '>'. PHP_EOL . $val . PHP_EOL .'</li>' .  PHP_EOL;
-        }
-        $string .= "</$tag>";
-        return $string;
+	public static function listesOlUl(array $list, $classList, $classItem, $tag = ' ')
+	{
+        	$classList = (isset($classList) && !empty($classList)) ? ' class="' . $classList . '"': null;
+        	$classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
+        	$string =' ';
+        	$string .= "<$tag $classList>";
+        	foreach($list as $key => $val)
+        	{
+            		$string .= '<li ' . $classItem . '>'. PHP_EOL . $val . PHP_EOL .'</li>' .  PHP_EOL;
+        	}
+        	$string .= "</$tag>";
+        	return $string;
 	}
 
-    public static function listesdlDtDd(array $list, $classList, $classItem){
-        $classList = (isset($classList) && !empty($classList)) ? ' class="' . $classList . '"': null;
-        $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
-        $string =' ';
-        $string .= "<dl $classList>";
-        foreach($list as $key => $val)
-        {
-            $string .= '<dt ' . $classItem . '>'. PHP_EOL . $key . PHP_EOL .'</dt>' .  PHP_EOL;
-            $string .= '<dd ' . $classItem . '>'. PHP_EOL . $val . PHP_EOL .'</dd>' .  PHP_EOL;
-        }
-        $string .= "</dl>";
-        return $string;
-    }
+    	public static function listesdlDtDd(array $list, $classList, $classItem)
+	{
+    		$classList = (isset($classList) && !empty($classList)) ? ' class="' . $classList . '"': null;
+        	$classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
+        	$string =' ';
+        	$string .= "<dl $classList>";
+        	foreach($list as $key => $val)
+        	{
+            		$string .= '<dt ' . $classItem . '>'. PHP_EOL . $key . PHP_EOL .'</dt>' .  PHP_EOL;
+            		$string .= '<dd ' . $classItem . '>'. PHP_EOL . $val . PHP_EOL .'</dd>' .  PHP_EOL;
+        	}
+        	$string .= "</dl>";
+        	return $string;
+   	 }
 
-    public static function radiobuttonsGroup(array $list, $classForm, $classItem,$nameForInput){
-
-        $classForm = (isset($classForm) && !empty($classForm)) ? ' class="' . $classForm . '"': null;
+    	public static function radiobuttonsGroup(array $list, $classForm, $classItem,$nameForInput)
+	{
+		$classForm = (isset($classForm) && !empty($classForm)) ? ' class="' . $classForm . '"': null;
+        	$classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
+        	$nameForInput = (isset($nameForInput) && !empty($nameForInput)) ? ' name="' . $nameForInput . '"': null;
+		$string =' ';
+        	$string .= "<form $classForm>";
+        	foreach($list as $key => $val)
+        	{
+            		$valForInput = (isset($key) && !empty($key)) ? ' value="' . $key . '"': null;
+            		$string .= '<input type="radio" ' . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
+        	}
+        	$string .= "</form >";
+        	return $string;
+    	}
+	
+	public static function checkbox(array $list, $classForm, $classItem,$nameForInput)
+	{
+	$classForm = (isset($classForm) && !empty($classForm)) ? ' class="' . $classForm . '"': null;
         $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
         $nameForInput = (isset($nameForInput) && !empty($nameForInput)) ? ' name="' . $nameForInput . '"': null;
-
         $string =' ';
         $string .= "<form $classForm>";
         foreach($list as $key => $val)
         {
-            $valForInput = (isset($key) && !empty($key)) ? ' value="' . $key . '"': null;
-            $string .= '<input type="radio" ' . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
+        	$valForInput = (isset($key) && !empty($key)) ? ' value="' . $key . '"': null;
+            	$string .= '<input type="checkbox" ' . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
         }
         $string .= "</form >";
         return $string;
-    }
-	
-	  public static function checkbox(array $list, $classForm, $classItem,$nameForInput){
-
-        $classForm = (isset($classForm) && !empty($classForm)) ? ' class="' . $classForm . '"': null;
-        $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
-        $nameForInput = (isset($nameForInput) && !empty($nameForInput)) ? ' name="' . $nameForInput . '"': null;
-
-        $string =' ';
-        $string .= "<form $classForm>";
-        foreach($list as $key => $val)
-        {
-            $valForInput = (isset($key) && !empty($key)) ? ' value="' . $key . '"': null;
-            $string .= '<input type="checkbox" ' . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
-        }
-        $string .= "</form >";
-        return $string;
-    }
-	
-	
-	
+    }	
 }
 ?>
 
