@@ -18,7 +18,7 @@ $valradio = array('varOne'=>'first', 'varTwo'=>'Second', 'varThree'=>'Fight');
 $radioForm = HtmlHelper::radiobuttonsGroup($valradio,'form-inline','','group');
 
 $valCheckbox = array('varOne'=>'first', 'varTwo'=>'Second', 'varThree'=>'Fight');
-$checkboxForm = HtmlHelper::checkbox($valCheckbox,'form-inline','','val');
+$checkboxForm = HtmlHelper::checkbox($valCheckbox,'form-inline','','val',1);
 
 include_once('template/index.php');
 
