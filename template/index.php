@@ -19,6 +19,17 @@
     echo $selectMult;
     echo "<br>";
     echo $table;
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo $listUl;
+    echo "<br>";
+    echo "<br>";
+    echo $dtdddlList;
+    echo "<br>";
+    echo "<br>";
+    echo $radioForm;
+
       ?>
    
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

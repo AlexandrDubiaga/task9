@@ -28,7 +28,7 @@ abstract class HtmlHelper{
 		}
 	}
 	
-	public static function select($select, $class = null,$size, $formControl, $selected) 
+	public static function select(array $select, $class = null,$size, $formControl, $selected)
 	{
 		if (is_array($select)) 
 		{
@@ -49,10 +49,17 @@ abstract class HtmlHelper{
 		}
 	}
 	
-	public static function table(array $names, $class)
-	{	
+	public static function table(array $names, array $titles, $class)
+	{
+        $string='';
 		$class = (isset($class) && !empty($class)) ? ' class="' . $class . '"': null;
 		$string .= "<table $class>";
+        $string .= '<tr>';
+        foreach($titles as $key => $val)
+        {
+            $string .= '<th>'. PHP_EOL . $val . PHP_EOL .'</th>' .  PHP_EOL;;
+        }
+        $string .= '</tr>';
 		$string .= '<tr>';
 		foreach($names as $key => $val)
 		{
@@ -64,8 +71,53 @@ abstract class HtmlHelper{
 		return $string;
 	
 	}
+	public static function listesOlUl(array $list, $classList, $classItem, $tag = ' '){
+        $classList = (isset($classList) && !empty($classList)) ? ' class="' . $classList . '"': null;
+        $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
+        $string =' ';
+        $string .= "<$tag $classList>";
+        foreach($list as $key => $val)
+        {
+            $string .= '<li ' . $classItem . '>'. PHP_EOL . $val . PHP_EOL .'</li>' .  PHP_EOL;
+        }
+        $string .= "</$tag>";
+        return $string;
+	}
+
+    public static function listesdlDtDd(array $list, $classList, $classItem){
+        $classList = (isset($classList) && !empty($classList)) ? ' class="' . $classList . '"': null;
+        $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
+        $string =' ';
+        $string .= "<dl $classList>";
+        foreach($list as $key => $val)
+        {
+            $string .= '<dt ' . $classItem . '>'. PHP_EOL . $key . PHP_EOL .'</dt>' .  PHP_EOL;
+            $string .= '<dd ' . $classItem . '>'. PHP_EOL . $val . PHP_EOL .'</dd>' .  PHP_EOL;
+        }
+        $string .= "</dl>";
+        return $string;
+    }
+
+    public static function radiobuttonsGroup(array $list, $classForm, $classItem,$nameForInput){
+
+        $classForm = (isset($classForm) && !empty($classForm)) ? ' class="' . $classForm . '"': null;
+        $classItem = (isset($classItem) && !empty($classItem)) ? ' class="' . $classItem . '"': null;
+        $nameForInput = (isset($nameForInput) && !empty($nameForInput)) ? ' name="' . $nameForInput . '"': null;
+
+        $string =' ';
+        $string .= "<form $classForm>";
+        foreach($list as $key => $val)
+        {
+            $valForInput = (isset($key) && !empty($key)) ? ' value="' . $key . '"': null;
+            $string .= '<input type="radio" ' . $classItem . ' '.$nameForInput.' '.$valForInput.'>'. PHP_EOL . $val . PHP_EOL;
+        }
+        $string .= "</form >";
+        return $string;
+    }
 	
 	
 	
 }
 ?>
+
+
